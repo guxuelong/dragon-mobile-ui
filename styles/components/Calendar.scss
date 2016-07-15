@@ -1,0 +1,130 @@
+body {
+  overflow: hidden;
+}
+.ui-calendar {
+  .ui-calendar-header, .ui-calendar-body {
+    z-index: 9000;
+  }
+}
+/* header */
+.ui-calendar-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: r(23.5);
+    padding: r(6) 0 r(4) 0;
+    color: #666;
+    background-color: #eeeeee;
+    text-align: center;
+    table {
+      width: 100%;
+      th {
+        line-height: r(13.5);
+        height: r(13.5);
+      }
+      .week-color{
+        color:#ff8100;
+      }
+    }
+}
+
+/* body */
+.ui-calendar-body {
+  padding: 0 r(8) r(23.5) r(8);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: #fff;
+  top:r(23.5);
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-scrolling: touch;
+  .ui-calendar-title {
+    text-align: center;
+    height: r(30);
+    font-weight: bold;
+    line-height: r(30);
+  }
+  .ui-calendar-table {
+    /*height: r(320);*/
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: r(1) solid #e6e6e6;
+    .ui-calendar-column {
+      text-align: center;
+    }
+    .ui-calendar-cell {
+      /*width: 100%;*/
+      padding: r(3) r(0);
+      height: 100%;
+      .ui-calendar-text {
+        display: block;
+        margin: 0 auto;
+        color: #666;
+        /*border-radius: r(4);*/
+        width: r(48);
+        height: r(48);
+        line-height: r(48);
+        border: r(1) solid transparent;
+        padding: 0;
+        background: transparent;
+        text-align: center;
+        font-weight: normal;
+      }
+
+      .ui-calendar-text.ui-calendar-text-nomal {
+        &:hover {
+          background: #ff8100;
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+      .ui-calendar-text-others {
+        color: #cbcbcb;
+        display: none;
+      }
+      .ui-calendar-text-disabled {
+        color: #ccc;
+        cursor: not-allowed;
+      }
+      .ui-calendar-text.ui-calendar-text-full {
+        color: #ccc;
+        cursor: not-allowed;
+        line-height: r(48);
+        position: relative;
+        div:nth-child(1) {
+
+        }
+        div:nth-child(2) {
+          position: absolute;
+          width: r(48);
+          height: r(48);
+          top: r(20);
+        }
+      }
+      .ui-calendar-text-selected {
+        background: #ff8100;
+        color: #fff;
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+    width:0;
+    opacity:0
+}
+::-webkit-scrollbar-track {
+    background:rgba(255,255,0,0);
+    opacity:0;
+}
+::-webkit-scrollbar-thumb {
+    background:rgba(255,255,0,0);
+    opacity:0
+}
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255,255,0,0);
+    opacity: 0
+}

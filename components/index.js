@@ -10,6 +10,6 @@ export Cell from './Cell';
 export Picker from './Picker';
 export Selector from './Selector';
 export Switch from './Switch';
-
+export Calendar from './Calendar';
 
 
